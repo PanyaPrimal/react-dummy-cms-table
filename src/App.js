@@ -45,8 +45,9 @@ function App() {
         </ul>
       </nav>
       <Routes>
+        <Route path="/" />
         {sortedTabs.map((tab) => (
-          <Route key={tab.id} path={`${tab.id}`} element={<LazyComponent path={tab.path} />} />
+          <Route key={tab.id} path={`/${tab.id}`} element={<LazyComponent path={tab.path} />} />
         ))}
       </Routes>
     </div>

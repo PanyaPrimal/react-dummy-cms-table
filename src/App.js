@@ -12,8 +12,8 @@ function App() {
 
   const getActiveTab = () => {
     const pathSegments = location.pathname.split('/');
-    if (pathSegments.length > 1) {
-      const targetTabId = pathSegments[1];
+    if (pathSegments.length > 2) {
+      const targetTabId = pathSegments[2];
       return sortedTabs.find((tab) => tab.id === targetTabId);
     }
     return null;
@@ -23,10 +23,9 @@ function App() {
 
   useEffect(() => {
     if (!activeTab) {
-      navigate(`/${sortedTabs[0].id}`);
+      navigate(`/react-dummy-cms-table/${sortedTabs[0].id}`);
     }
-  }, [navigate, activeTab, sortedTabs]);
-
+  }, []);
 
   return (
     <div className="App">
@@ -35,8 +34,8 @@ function App() {
           {sortedTabs.map((tab) => (
             <li key={tab.id}>
               <Link
-                to={`${tab.id}`}
-                className={location.pathname === `${tab.id}` ? 'active-tab' : ''}
+                to={`/react-dummy-cms-table/${tab.id}`}
+                className={location.pathname === `/react-dummy-cms-table/${tab.id}` ? 'active-tab' : ''}
               >
                 {tab.title}
               </Link>
@@ -45,9 +44,8 @@ function App() {
         </ul>
       </nav>
       <Routes>
-        <Route path="/" />
         {sortedTabs.map((tab) => (
-          <Route key={tab.id} path={`/${tab.id}`} element={<LazyComponent path={tab.path} />} />
+          <Route key={tab.id} path={`/react-dummy-cms-table/${tab.id}`} element={<LazyComponent path={tab.path} />} />
         ))}
       </Routes>
     </div>

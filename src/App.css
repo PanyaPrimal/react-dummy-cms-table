@@ -1,0 +1,50 @@
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+body {
+  display: block;
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 50px
+}
+
+a {
+  text-decoration: none;
+  color: wheat;
+}
+
+a:hover {
+  color: rgb(236, 186, 93);
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30%;
+}
+
+.active-tab {
+  background-color: #5398e2;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+}

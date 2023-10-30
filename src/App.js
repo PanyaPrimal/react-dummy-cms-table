@@ -35,8 +35,8 @@ function App() {
           {sortedTabs.map((tab) => (
             <li key={tab.id}>
               <Link
-                to={`/${tab.id}`}
-                className={location.pathname === `/${tab.id}` ? 'active-tab' : ''}
+                to={`${tab.id}`}
+                className={location.pathname === `${tab.id}` ? 'active-tab' : ''}
               >
                 {tab.title}
               </Link>
@@ -46,7 +46,7 @@ function App() {
       </nav>
       <Routes>
         {sortedTabs.map((tab) => (
-          <Route key={tab.id} path={`/${tab.id}`} element={<LazyComponent path={tab.path} />} />
+          <Route key={tab.id} path={`${tab.id}`} element={<LazyComponent path={tab.path} />} />
         ))}
       </Routes>
     </div>
